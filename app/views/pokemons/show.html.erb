@@ -1,2 +1,14 @@
-
-<img src='https://source.unsplash.com/random/400x500?<%= @pokemon_name %>' alt='<%= @pokemon_name %>'/>
+<div class="container">
+  <div class="row">
+    <% @pokemon_name.each do |pokemon| %>
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="https://source.unsplash.com/random/400x500?name=<%= URI.encode_www_form_component(pokemon.name) %>" class="card-img-top" alt='<%= URI.encode_www_form_component(pokemon.name) %>'/>
+          <div class="card-body">
+            <h5 class="card-title"><%= pokemon.name %></h5>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
