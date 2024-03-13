@@ -1,12 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <title>All Pokemons</title>
-</head>
-<body>
 
 <div class="container mt-5">
   <h1>All Pokemons</h1>
@@ -14,15 +5,16 @@
     <thead>
       <tr>
         <th scope="col">Pokemon Name</th>
+        <th scope="col">Type</th>
       </tr>
     </thead>
     <tbody>
-      <% @pokemons.each do |pokemon| %>
-        <tr>
-          <td><%= pokemon.name %></td>
-          <td><a class="btn btn-outline-success" href="/pokemon/detail?name=<%= pokemon.name %>&id=<%= pokemon.id %>">Show Pokemon </a></td>
-        </tr>
-      <% end %>
+    <% @pokemons.each do |pokemon| %>
+      <tr>
+        <td><%= pokemon.name %></td>
+        <td><a class="btn btn-outline-success" href="/pokemon/detail?name=<%= pokemon.name %>&id=<%= pokemon.id %>">Show Pokemon</a></td>
+      </tr>
+    <% end %>
     </tbody>
   </table>
 </div>
