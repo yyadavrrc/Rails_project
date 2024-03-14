@@ -1,0 +1,46 @@
+<h1>About Us</h2>
+
+<div class="container"> <h2>1.1 - Describing Dataset:</h2>
+<p>Data Source: Pokémon API (<a href="https://pokeapi.co/">https://pokeapi.co/</a>)</p>
+<p>The Pokémon API is a comprehensive source of information about Pokémon species, abilities, types, and more. The data available from this API includes details about individual Pokémon, their abilities, types, and the relationships between them. Here's a brief breakdown:</p>
+<h3>Pokémon Data:</h3>
+<ul>
+    <li>Species: Name, ID, base stats, height, weight, etc.</li>
+    <li>Types: The elemental types of Pokémon (e.g., Water, Fire).</li>
+    <li>Abilities: Special powers or traits of Pokémon.</li>
+    <li>Evolution: Information about the evolutionary line of Pokémon.</li>
+</ul>
+<h3>Relationships:</h3>
+<ul>
+    <li>Pokémon can have multiple abilities.</li>
+    <li>Pokémon belong to one or more types.</li>
+    <li>Pokémon can evolve into other Pokémon.</li>
+</ul>
+<p><strong>Integration of Data:</strong> The Pokémon data is structured in a way that allows for relationships between entities. For example, a Pokémon can have multiple abilities, belong to one or more types, and evolve into other Pokémon. These relationships will be used to design the database schema.</p>
+<p>For example, querying Bulbasaur could return information about its abilities (e.g., Overgrow), types (e.g., Grass and Poison), and evolution details (e.g., evolves into Ivysaur). This integration of data ensures that the different aspects of a Pokémon's information are connected and easily accessible in the database schema.</p>
+
+<h2>1.2 - ERD: Pokémon Database Schema</h2>
+
+<h3>Tables:</h3>
+<p><strong>Pokémon Table:</strong></p>
+<ul>
+    <li>Columns: ID (Primary Key), Name, Base Stats, Height, Weight, Evolution Details, Type ID (Foreign Key), Ability ID (Foreign Key), etc.</li>
+</ul>
+<p><strong>Types Table:</strong></p>
+<ul>
+    <li>Columns: ID (Primary Key), Type Name.</li>
+</ul>
+<p><strong>Abilities Table:</strong></p>
+<ul>
+    <li>Columns: ID (Primary Key), Ability Name.</li>
+</ul>
+
+<h3>Relationships:</h3>
+<ul>
+    <li>One-to-Many: Pokémon to Abilities (A Pokémon can have multiple abilities).</li>
+    <li>Many-to-Many: Pokémon to Types (A Pokémon can belong to multiple types).</li>
+</ul>
+
+<p>This ERD will serve as a blueprint for creating the necessary database tables and establishing relationships between them using ActiveRecord models. Each table represents a key entity in the Pokémon dataset, and the lines between them indicate the nature of their relationships.</p>
+
+</div>

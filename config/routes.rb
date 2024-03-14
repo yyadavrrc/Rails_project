@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'about/index'
   get 'search/index'
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
@@ -7,6 +8,7 @@ Rails.application.routes.draw do
 
   # Define routes for PokemonsController
   get '/', to: 'home#index'
+  get '/about', to: 'about#index', as: 'about'
   get '/pokemons', to: 'pokemons#index', as: 'pokemons'
   get '/pokemons/:id', to: 'pokemons#show', as: 'pokemon'
   get '/pokemon/search', to: 'search#index', as: 'search'

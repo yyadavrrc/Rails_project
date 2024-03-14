@@ -1,9 +1,10 @@
-require 'httparty' # Add this line to include HTTParty
+require 'httparty'
 
 # Fetch data from the API
 PokemonType.destroy_all
 count = 0
-response = HTTParty.get('https://pokeapi.co/api/v2/pokemon?limit=100')
+response = HTTParty.get('https://pokeapi.co/api/v2/pokemon?limit=100') #data source 1
+#<img src="https://source.unsplash.com/random/400x500?<%= @pokemon_name&.name %>"/> #data source 2
 pokemon_data = JSON.parse(response.body)
 
 pokemon_types = ['grass', 'fire', 'water', 'electric', 'psychic', 'ground', 'bug', 'flying', 'poison', 'steel', 'ghost', 'rock', 'fighting', 'normal', 'fairy']
