@@ -32,9 +32,18 @@
       </li>
     </ul>
     <form class="form-inline" action="/pokemon" method="get">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
+    <div class="form-group mr-sm-2">
+      <select class="form-control" name="pokemon_type_id">
+        <option value="all">Select Pokemon Type</option>
+        <% PokemonType.all.each do |type| %>
+          <option value="<%= type.id %>"><%= type.name %> (ID: <%= type.id %>)</option>
+        <% end %>
+      </select>
+    </div>
+    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="search">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+  </form>
+
     <script>
   document.addEventListener('DOMContentLoaded', function() {
     var form = document.querySelector('.form-inline');
@@ -45,11 +54,12 @@
 
       // Get the input value
       var searchInput = form.querySelector('[name="search"]').value;
+      var searchCat = form.querySelector('[name="pokemon_type_id"]').value;
 
       // Perform any additional actions with the searchInput if needed
 
       // Manually update the URL or perform any other necessary actions
-      window.location.href = '/pokemon/search?search=' + encodeURIComponent(searchInput);
+      window.location.href = '/pokemon/search?search=' + encodeURIComponent(searchInput)+'&id=' + searchCat;
     });
   });
 </script>
