@@ -1,0 +1,19 @@
+<div class="container mt-5">
+  <h1>All Pokemons</h1>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Pokemon Name</th>
+        <th scope="col">Type</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @pokemons.each do |pokemon| %>
+      <tr>
+        <td><%= pokemon.name %></td>
+        <td><a class="btn btn-outline-success" href="/pokemon/detail?name=<%= pokemon.name %>&id=<%= pokemon.id %>">Show Pokemon</a></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>

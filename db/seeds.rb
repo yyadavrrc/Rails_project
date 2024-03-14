@@ -28,7 +28,7 @@ end
 
 # db/seeds.rb
 
-pokemon_types = ['grass', 'fire', 'water', 'electric', 'psychic', 'ground', 'bug', 'flying', 'poison', 'steel', 'ghost', 'rock', 'fighting', 'normal', 'fairy', ] # Add more types as needed
+pokemon_types = ['grass', 'fire', 'water', 'electric', 'psychic', 'ground', 'bug', 'flying', 'poison', 'steel', 'ghost', 'rock', 'fighting', 'normal', 'fairy'] # Add more types as needed
 
 pokemon_types.each do |type|
   PokemonType.create(name: type)
